@@ -1,6 +1,6 @@
 {
   "name": "arbnod",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Calcul de position nodes",
   "main": "lib/index.js",
   "typings": "index.d.ts",
