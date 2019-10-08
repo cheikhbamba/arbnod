@@ -7,7 +7,7 @@ export default (families: Family[]): IConnector[] => {
 
   families.filter(withType('root', 'child')).forEach(family => {
     if (family.pUnits.length !== 1) {
-      throw new Error(`[relatives-tree]: a child family should have only one parent's unit`);
+      throw new Error(`[arbnod]: a child family should have only one parent's unit`);
     }
 
     const mY = family.top + 2;

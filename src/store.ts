@@ -2,7 +2,7 @@ import Family from './models/family';
 import { withId } from './utils';
 import { Gender, IFamilyNode } from './types';
 
-const ERROR_PREFIX = '[relatives-tree::store]:';
+const ERROR_PREFIX = '[arbnod::store]:';
 
 const mapNode = (node: IFamilyNode): [string, IFamilyNode] => [node.id, { ...node }];
 
