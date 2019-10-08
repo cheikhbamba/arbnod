@@ -25,15 +25,15 @@ export interface IFamilyNode {
   siblings: IRelation[];
   spouses: IRelation[];
   placeholder?: boolean;
+  nom: string;
+  date: string;
+  hasSub: boolean;
 }
 
 export interface IFamilyExtNode extends IFamilyNode {
   top: number;
   left: number;
   hasSubTree: boolean;
-  nom: string;
-  date: string;
-  hasSub: boolean;
 }
 
 export interface IConnector {

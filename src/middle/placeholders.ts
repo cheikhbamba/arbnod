@@ -6,6 +6,9 @@ const createRel = (id: string, type: RelationType = 'blood'): IRelation => ({ id
 
 const createNode = (gender: Gender): IFamilyNode => ({
   id: `${gender}-placeholder`,
+  nom: `${gender}-placeholder`,
+  date: `${gender}-placeholder`,
+  hasSub: true,
   placeholder: true,
   gender: gender,
   parents: [],
