@@ -27,6 +27,8 @@ export interface IFamilyNode {
   placeholder?: boolean;
   nom: string;
   date: string;
+  desc: string;
+  photo: string;
   hasSub: boolean;
 }
 

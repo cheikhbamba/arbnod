@@ -25,8 +25,8 @@ export default (store: Store): Store => {
       arrangeFamily(family);
       store.families.set(family.id, family);
 
-      const nextUnits = family.cUnitsWithChildren;
-      if (nextUnits.length) stack = [...stack, ...nextUnits.reverse()];
+      /*const nextUnits = family.cUnitsWithChildren;
+      if (nextUnits.length) stack = [...stack, ...nextUnits.reverse()];*/
     }
   }
 

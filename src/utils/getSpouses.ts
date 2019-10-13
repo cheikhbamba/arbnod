@@ -15,13 +15,13 @@ export default (store: Store, parents: IFamilyNode[]): ISpousesData => {
     let spouse: IFamilyNode | undefined;
 
     const parent = middle[0];
-    const married = parent.spouses.find(withType('married'));
-
+    //const married = parent.spouses.find(withType('married'));
+    const married = parent.spouses.find(withType('divorced'));
     if (married) {
       spouse = store.getNode(married.id);
-    } else if (parent.spouses.length === 1) {
+    } else if (parent.spouses.length === 1 && parent.spouses[0].id === store.rootNode.spouses[0].id) {
       spouse = store.getNode(parent.spouses[0].id)
-    } else if (parent.spouses.length > 1) {
+    } else if (parent.spouses.length > 1 && parent.spouses[0].id === store.rootNode.spouses[0].id) {
       spouse = (
         parent.spouses
           .map(relToNode(store))
@@ -31,7 +31,7 @@ export default (store: Store, parents: IFamilyNode[]): ISpousesData => {
 
     if (spouse) {
       parent.gender === store.gender
-        ? middle.push(spouse)
+        ? middle.unshift(spouse)
         : middle.unshift(spouse);
     }
   }
