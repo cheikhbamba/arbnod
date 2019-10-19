@@ -31,13 +31,23 @@ export default (store: Store) => {
 
     // CHILDREN's SPOUSES
     children.forEach(child => {
-      if (child.spouses.length) {
-        const { left, middle, right } = getSpouses(store, [child]);
-        [...left.map(node => [node]), middle, ...right.map(node => [node])].forEach(nodes => (
-          family.cUnits.push(new Unit(family.id, nodes, true))
-        ));
-      } else {
+      if (children[0].id === store.rootNode.children[0].id) {
+
         family.cUnits.push(new Unit(family.id, [child], true));
+
+      } else if (child.spouses.length > 0) {
+
+        const { left, middle, right } = getSpouses(store, [child]);
+
+        [...left.map(node => [node]),
+          middle,
+        ...right.map(node => [node])].forEach(nodes =>
+          (family.cUnits.push(new Unit(family.id, nodes, true)))
+        );
+
+      } else if (child.spouses.length === 0) {
+        family.cUnits.push(new Unit(family.id, [child], true));
+        //console.log(JSON.stringify(child.id));
       }
     });
 

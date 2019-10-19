@@ -1,6 +1,6 @@
 {
   "name": "arbnod",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Calcul de position nodes",
   "main": "lib/index.js",
   "typings": "index.d.ts",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/node": "12.6.8",
     "benchmark": "2.1.4",
-    "typescript": "3.5.3"
+    "typescript": "3.4.5"
   },
   "dependencies": {},
   "homepage": "https://github.com/cheikhbamba/arbnod"

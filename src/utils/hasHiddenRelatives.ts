@@ -29,9 +29,8 @@ export default (family: Family, node: IFamilyNode): boolean => {
      return (!sameParents && (!!node.parents.length || !!node.siblings.length));
    }*/
 
-  if ((node.parents.length < 1) || (node.children.length < 1) || family.type === 'root') {
+  if ((node.parents.length < 1) || (node.children.length < 1)) {
     return false;
   }
-
   return true;
 };
